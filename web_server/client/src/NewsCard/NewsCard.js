@@ -4,7 +4,7 @@ import React from 'react';
 
 class NewsCard extends React.Component{
   redirectToUrl(url) {
-    window.open(url, '_blank');
+    window.open(url, '_blank'); // open url in new tab
   }
 
   render() {
@@ -20,7 +20,7 @@ class NewsCard extends React.Component{
                 <h4>{this.props.news.title}</h4>
                 <div className="news-description">
                   <p>{this.props.news.description}</p>
-                  <div>
+                  <div> {/* if not null, render details chip */}
                     {this.props.news.source != null && <div className='chip light-blue news-chip'>{this.props.news.source}</div>}
                     {this.props.news.reason != null && <div className='chip light-green news-chip'>{this.props.news.reason}</div>}
                     {this.props.news.time != null && <div className='chip amber news-chip'>{this.props.news.time}</div>}
